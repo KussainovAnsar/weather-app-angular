@@ -54,11 +54,13 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
-Ответ на 5ое задание 
+
+
+
+
+## Ответ на 5ое задание 
 Оптимизация производительности:
 • Дан фрагмент кода с низкой производительностью. Необходимо оптимизировать
 его для ускорения выполнения.
