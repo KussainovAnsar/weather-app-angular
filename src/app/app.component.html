@@ -1,0 +1,24 @@
+<header class="topbar">
+  <button class="menu-btn" (click)="toggleMenu()">☰</button>
+  <h1 class="title"></h1>
+
+   <div class="theme-switch">
+      <span>LIGHT</span>
+      <label class="switch">
+        <input type="checkbox" (change)="toggleTheme()" [checked]="isDarkTheme" />
+        <span class="slider"></span>
+      </label>
+      <span>DARK</span>
+    </div>
+</header>
+
+<!-- Боковое меню -->
+<nav class="menu-widget" *ngIf="menuOpen">
+  <button (click)="goTo('weather')">Погода</button>
+  <button (click)="goTo('calendar')">Календарь</button>
+</nav>
+
+
+<main class="app-content">
+  <router-outlet></router-outlet>
+</main>

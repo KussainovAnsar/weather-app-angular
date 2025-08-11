@@ -1,0 +1,141 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #1976d2;
+  --day-bg: #f5f5f5;
+  --day-hover: #e0e0e0;
+  --border-color: #ccc;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --accent-color: #64b5f6;
+  --day-bg: #2c2c2c;
+  --day-hover: #3a3a3a;
+  --border-color: #444;
+}
+
+.calendar-container {
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.calendar-header button {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.calendar-header button:hover {
+  background: #125a9c;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day-name {
+  text-align: center;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  background: var(--day-bg);
+  border-radius: 4px;
+}
+
+.calendar-empty {
+  height: 80px;
+}
+
+.calendar-day {
+  background: var(--day-bg);
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.2s;
+  min-height: 80px;
+  border: 1px solid var(--border-color);
+}
+
+.calendar-day:hover {
+  background: var(--day-hover);
+}
+
+.calendar-day.selected {
+  outline: 2px solid var(--accent-color);
+}
+
+.day-number {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.events-list li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+hr {
+  border: 1px solid var(--border-color);
+}
+
+button {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+input {
+  padding: 0.3rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background: var(--day-bg);
+  color: var(--text-color);
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

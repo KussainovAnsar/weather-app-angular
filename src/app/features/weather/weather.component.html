@@ -1,0 +1,36 @@
+<main class="main">
+  <section class="content">
+    <div class="weather-cards">
+      <div class="weather-card" *ngFor="let city of cities" (click)="getWeather(city)">
+        <h3>{{ city }}</h3>
+        <img [src]="getIcon(city)" alt="icon" />
+        <div class="temp-main">{{ getCurrentTemp(city) }}°</div>
+        <div class="desc">{{ getDescription(city) }}</div>
+        <div class="min-max">
+          <span class="min">{{ getMinTemp(city) }}° Min</span>
+          <span class="max">{{ getMaxTemp(city) }}° Max</span>
+        </div>
+        <button class="remove-btn" (click)="removeCity(city); $event.stopPropagation()">✕</button>
+      </div>
+
+      <div *ngIf="cities.length === 0" class="empty">
+        <p>Сначала добавьте город в панели справа</p>
+      </div>
+    </div>
+  </section>
+  
+  <aside class="add-city-panel">
+    <h2>ADD CITY</h2>
+    <div class="search-box">
+      <input
+        type="text"
+        [(ngModel)]="city"
+        placeholder="Search city"
+        (keyup.enter)="addCity()"
+      />
+      <button (click)="addCity()">
+        <img src="/src/assets/search1.png" />
+      </button>
+    </div>
+  </aside>
+</main>
